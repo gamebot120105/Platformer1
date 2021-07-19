@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/UserInrterface/Title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UserInrterface/PlayButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInrterface/QuitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/background.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ui_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/player.png" type="Texture" id=6]
+[ext_resource path="res://Assets/enemy.png" type="Texture" id=7]
+[ext_resource path="res://Assets/coin.png" type="Texture" id=8]
+[ext_resource path="res://Assets/portal.png" type="Texture" id=9]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 600.0 ],
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player" type="TextureRect" parent="background"]
+margin_left = 248.0
+margin_top = 88.0
+margin_right = 344.0
+margin_bottom = 184.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy" type="TextureRect" parent="background"]
+margin_left = 840.0
+margin_top = 480.0
+margin_right = 948.0
+margin_bottom = 573.0
+texture = ExtResource( 7 )
+
+[node name="coin" type="TextureRect" parent="background"]
+margin_left = 112.0
+margin_top = 360.0
+margin_right = 179.0
+margin_bottom = 427.0
+texture = ExtResource( 8 )
+
+[node name="coin2" type="TextureRect" parent="background"]
+margin_left = 192.0
+margin_top = 272.0
+margin_right = 259.0
+margin_bottom = 339.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin3" type="TextureRect" parent="background"]
+margin_left = 192.0
+margin_top = 456.0
+margin_right = 259.0
+margin_bottom = 523.0
+texture = ExtResource( 8 )
+
+[node name="portal" type="TextureRect" parent="background"]
+margin_left = 840.0
+margin_top = 144.0
+margin_right = 978.0
+margin_bottom = 345.0
+texture = ExtResource( 9 )
+
+[node name="Title" parent="." instance=ExtResource( 1 )]
+margin_left = -148.5
+margin_top = 96.0
+margin_right = 148.5
+margin_bottom = 195.0
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.0
+margin_top = -36.0
+margin_right = 153.0
+margin_bottom = 116.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 2 )]
+next_scene = "res://src/Levels/Level.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 3 )]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/UserInrterface/PlayButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UserInrterface/QuitButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/background.png" type="Texture" id=3]
+[ext_resource path="res://src/Screens/EndMenu.gd" type="Script" id=4]
+[ext_resource path="res://src/UserInrterface/Title.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/ui_theme_small.tres" type="Theme" id=8]
+[ext_resource path="res://Assets/ui_theme_es.tres" type="Theme" id=9]
+
+[node name="EndMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 8 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.0
+margin_top = -4.0
+margin_right = 153.0
+margin_bottom = 148.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 1 )]
+text = "Play Again"
+next_scene = "res://src/Levels/Level.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 2 )]
+
+[node name="Title" parent="." instance=ExtResource( 7 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -425.0
+margin_top = -164.0
+margin_right = 425.0
+margin_bottom = -114.0
+theme = ExtResource( 8 )
+text = "Congratulations you passed the level !!!"
+
+[node name="Title2" parent="." instance=ExtResource( 7 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -147.0
+margin_top = -100.0
+margin_right = 147.0
+margin_bottom = 3.0
+theme = ExtResource( 9 )
+text = "Your score is %s
+You died times %s"
